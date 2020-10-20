@@ -1,21 +1,54 @@
 *{
     font-family: 'Sawarabi Gothic', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: whitesmoke;
+    font-weight: bolder;
+    opacity: 3;
 }
 
 
 body {
     background-image: url(../Images/image1.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.time {
+    float: right;
 }
 
 .first,
 .second,
 .third,
-.fourth,
-.heading {
-    /*background-color: blanchedalmond;*/
-    width: 550px;
-    color: whitesmoke;
+.fourth {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-    
+h2 {
+    text-align: center;
+}
+
+.yb-btn {
+    width: 400px; 
+    background-color: tomato;
+}
+
+/* Completed the quiz */
+
+.sbmt-btn {
+    background-color: tomato;
+    width: 80px;
+}
+
+/* High Scores List */
+
+.play-btn,
+.clear-btn {
+    background-color: tomato;
+    width: 200px;
+
 }
