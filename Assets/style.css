@@ -17,7 +17,7 @@ body {
 .time {
     float: right;
 }
-
+.enter-btn,
 .first,
 .second,
 .third,
@@ -38,7 +38,7 @@ h2 {
 }
 
 /* Completed the quiz */
-
+.enter-btn,
 .sbmt-btn {
     background-color: tomato;
     width: 80px;
