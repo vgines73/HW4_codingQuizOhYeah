@@ -1,15 +1,10 @@
+// to start the game ill need to
 
-// function for timer in header
-var secondsDisplay = document.querySelector("#seconds");
-
-var totalSeconds = 0;
-var secondsElasped = 0;
-
-// to start the game ill need
+//define all variables 
 
 //function to get to rules
 
-//function to get to questions
+//function to get to questions and start timer
 
 //for loop for questions
 
