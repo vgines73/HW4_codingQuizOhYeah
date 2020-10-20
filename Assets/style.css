@@ -1,4 +1,21 @@
-/*body {
+*{
+    font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+
+body {
     background-image: url(../Images/image1.jpg);
     background-size: cover;
+}
+
+.first,
+.second,
+.third,
+.fourth,
+.heading {
+    /*background-color: blanchedalmond;*/
+    width: 550px;
+    color: whitesmoke;
+
+    
 }
