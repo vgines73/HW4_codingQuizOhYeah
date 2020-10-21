@@ -4,19 +4,23 @@
     padding: 0;
     color: whitesmoke;
     font-weight: bolder;
-    opacity: 3;
+    
 }
 
-
+/* ==== BACKGROUND IMAGE ==== */
 body {
-    background-image: url(../Images/image1.jpg);
+    /* background-image: url(../Images/image1.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: black;
 }
 
+/* === TIMER IN HEADER === */
 .time {
     float: right;
 }
+
+/* === POSITIONING GAME === */
 .enter-btn,
 .first,
 .second,
@@ -32,23 +36,20 @@ h2 {
     text-align: center;
 }
 
+/* === STYLING BUTTONS === */
 .yb-btn {
     width: 400px; 
     background-color: tomato;
 }
 
-/* Completed the quiz */
 .enter-btn,
 .sbmt-btn {
     background-color: tomato;
     width: 80px;
 }
 
-/* High Scores List */
-
 .play-btn,
 .clear-btn {
     background-color: tomato;
     width: 200px;
-
 }

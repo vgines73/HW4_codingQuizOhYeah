@@ -22,11 +22,11 @@
 
     <!-- ENTER BUTTON -->
     <section>
-        <button class="enter-btn">Enter</button>
+        <button id="enter-btn">Enter</button>
     </section>
-    <!-- Rules of the game -->
-    <!-- If there's time add media and do jigsaw/pauly D voice to read rules and add scary music background and countdown timer-->
-    <section class="first">
+
+    <!-- RULES OF THE GAME -->
+    <section id="rules" class ="hide">
         <h2>Hello, I want to play a game.</h2>
         <br>
         <ol>
@@ -38,47 +38,49 @@
         </ol>
         <h3>The rules of the game have been made very clear...</h3> 
         <h2>Let the games begin!</h2>
-        <button class="yb-btn">YEAH BUDDY!</button>
+        <button id="yb-btn">YEAH BUDDY!</button>
     </section>
 
-    <!--Questions-->
-    <section class="second">
-        <h4>Question1</h4>
+    <!-- QUESTIONS -->
+    <section id="questions" class="hide">
+        <h4 class="questions-title"></h4>
         <br>
         <ul>
-            <button><li>A</li></button>
+            <button id="choices"><li>A</li></button>
             <br>
-            <button><li>B</li></button>
+            <button id="choices"><li>B</li></button>
             <br>
-            <button><li>C</li></button>
+            <button id="choices"><li>C</li></button>
             <br>
-            <button><li>D</li></button>
+            <button id="choices"><li>D</li></button>
         </ul>
         <br>
-        correct/incorrect goes here
+        <p class="answer"></p>
     </section>
             
-    <!--Completed the quiz-->
-    <section class="third">
+    <!-- COMPLETED THE QUIZ -->
+    <section id="completed-quiz" class="hide">
         <h2>Congratulations, You made it! AH YEAH! </h2>
         need to figure out how to input final score (Maybe Javascript)
-        <p>You're final score is:___</p>
+        <p>You're final score is <span id="score"></span>!</p>
 
-        <p>Enter intials:<input type="text" name="initials" id=""><button class="sbmt-btn">Submit</button></p>
+        <p>Enter intials:<input type="text" name="initials" id=""><button id="sbmt-btn">Submit</button></p>
     </section>
 
-    <!--High Scores List-->
-    <section class="fourth">
+    <!-- HIGH SCORES LIST -->
+    <section id="high-scores" class="hide">
         <h2>High Scores</h2>
         <!--I feel like a form for high scores goes here-->
         <form></form>
-        <button class="play-btn">Play Again</button>
-        <button class="clear-btn">Clear High Scores</button>
+        <button id="play-btn">Play Again</button>
+        <button id="clear-btn">Clear High Scores</button>
     </section>
 
 
 
-    <script src="./Assets/app.js"></script>
+    <script src="./Assets/js/app.js"></script>
+    <script src="./Assets/js/questions.js"></script>
+
 
     <footer>
         <!--Image by <a href="https://pixabay.com/users/tama66-1032521/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4758676">Peter H</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4758676">Pixabay</a>-->
