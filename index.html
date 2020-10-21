@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Javascript Quiz Saw Version</title>
     <link rel="stylesheet" href="./Assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
     <script src="https://use.fontawesome.com/4fc2ccba86.js"></script>
@@ -11,71 +11,72 @@
 <body>
 
     <div role="img" aria-label="creepy saw factory"></div>
+   
+    <main class="wrapper">
+        <!-- HIGH SCORES AND TIMER GO HERE -->
+        <header class="heading">
+            <a href="#">High Scores</a>
+            <div class="time">
+                <div class="seconds">30 seconds left</div>
+            </div>
+        </header>
 
-    <!-- HIGH SCORES AND TIMER GO HERE -->
-    <header class="heading">
-        <a href="#">High Scores</a>
-        <div class="time">
-            <div class="seconds">30 seconds left</div>
-        </div>
-    </header>
+        <!-- ENTER BUTTON -->
+        <section>
+            <button id="enter-btn">Enter</button>
+        </section>
 
-    <!-- ENTER BUTTON -->
-    <section>
-        <button id="enter-btn">Enter</button>
-    </section>
-
-    <!-- RULES OF THE GAME -->
-    <section id="rules" class ="hide">
-        <h2>Hello, I want to play a game.</h2>
-        <br>
-        <ol>
-            <li>Timer starts once you click the "YEAH BUDDY!" button.</li>
-            <li>Answer as many questions you can until the timer hits zero.</li>
-            <li>Each incorrect answer will reduce the timer.</li>
-            <li>Each correct answer will give you points.</li>
-            <li>You have 30 seconds...</li>
-        </ol>
-        <h3>The rules of the game have been made very clear...</h3> 
-        <h2>Let the games begin!</h2>
-        <button id="yb-btn">YEAH BUDDY!</button>
-    </section>
-
-    <!-- QUESTIONS -->
-    <section id="questions" class="hide">
-        <h4 class="questions-title"></h4>
-        <br>
-        <ul>
-            <button id="choices"><li>A</li></button>
+        <!-- RULES OF THE GAME -->
+        <section id="rules" class ="hide">
+            <h2>Hello, I want to play a game.</h2>
             <br>
-            <button id="choices"><li>B</li></button>
+            <ol>
+                <li>Timer starts once you click the "YEAH BUDDY!" button.</li>
+                <li>Answer as many questions you can until the timer hits zero.</li>
+                <li>Each incorrect answer will reduce the timer.</li>
+                <li>Each correct answer will give you points.</li>
+                <li>You have 30 seconds...</li>
+            </ol>
+            <h3>The rules of the game have been made very clear...</h3> 
+            <h2>Let the games begin!</h2>
+            <button id="yb-btn">YEAH BUDDY!</button>
+        </section>
+
+        <!-- QUESTIONS -->
+        <section id="questions" class="hide">
+            <h4 class="questions-title"></h4>
             <br>
-            <button id="choices"><li>C</li></button>
+            <ul>
+                <button id="choices"><li>A</li></button>
+                <br>
+                <button id="choices"><li>B</li></button>
+                <br>
+                <button id="choices"><li>C</li></button>
+                <br>
+                <button id="choices"><li>D</li></button>
+            </ul>
             <br>
-            <button id="choices"><li>D</li></button>
-        </ul>
-        <br>
-        <p class="answer"></p>
-    </section>
+            <p id="answer"></p>
+        </section>
             
-    <!-- COMPLETED THE QUIZ -->
-    <section id="completed-quiz" class="hide">
-        <h2>Congratulations, You made it! AH YEAH! </h2>
-        need to figure out how to input final score (Maybe Javascript)
-        <p>You're final score is <span id="score"></span>!</p>
+        <!-- COMPLETED THE QUIZ -->
+        <section id="completed-quiz" class="hide">
+            <h2>Congratulations, You made it! AH YEAH! </h2>
+            
+            <p>You're final score is <span id="score"></span>!</p>
 
-        <p>Enter intials:<input type="text" name="initials" id=""><button id="sbmt-btn">Submit</button></p>
-    </section>
+            <p>Enter intials:<input type="text" name="initials" id=""><button id="sbmt-btn">Submit</button></p>
+        </section>
 
-    <!-- HIGH SCORES LIST -->
-    <section id="high-scores" class="hide">
-        <h2>High Scores</h2>
-        <!--I feel like a form for high scores goes here-->
-        <form></form>
-        <button id="play-btn">Play Again</button>
-        <button id="clear-btn">Clear High Scores</button>
-    </section>
-
+        <!-- HIGH SCORES LIST -->
+        <section id="high-scores" class="hide">
+            <h2>High Scores</h2>
+            <!--I feel like a form for high scores goes here-->
+            <form></form>
+            <button id="play-btn">Play Again</button>
+            <button id="clear-btn">Clear High Scores</button>
+        </section>
+    </main>
 
 
     <script src="./Assets/js/app.js"></script>

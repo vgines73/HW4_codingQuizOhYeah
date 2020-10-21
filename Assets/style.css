@@ -21,11 +21,11 @@ body {
 }
 
 /* === POSITIONING GAME === */
-.enter-btn,
-.first,
-.second,
-.third,
-.fourth {
+#enter-btn,
+#rules,
+#questions,
+#completed-quiz,
+#high-scores {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -37,19 +37,19 @@ h2 {
 }
 
 /* === STYLING BUTTONS === */
-.yb-btn {
+#yb-btn {
     width: 400px; 
     background-color: tomato;
 }
 
-.enter-btn,
-.sbmt-btn {
+#enter-btn,
+#sbmt-btn {
     background-color: tomato;
     width: 80px;
 }
 
-.play-btn,
-.clear-btn {
+#play-btn,
+#clear-btn {
     background-color: tomato;
     width: 200px;
 }

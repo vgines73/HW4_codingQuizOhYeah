@@ -8,6 +8,7 @@ var yeahBuddyBtn = document.querySelector("#yb-btn");
 var questions = document.querySelector("#questions");
 var questionsTitle = document.querySelector("#questions-title");
 var choices = document.querySelector("#choices");
+var answer = document.querySelector("#answer");
 var completedQuiz = document.querySelector("#completed-quiz");
 var sumbitBtn = document.querySelector("#sbmt-btn");
 var highScores = document.querySelector("#high-scores");
