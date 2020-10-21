@@ -16,9 +16,16 @@ var playBtn = document.querySelector("#play-btn");
 var clearBtn = document.querySelector("#clear-btn");
 
 //function to get to rules
+enterBtn.addEventListener("click", function showRules() {
+   
+    enterBtn.style.display ="none";
+    
+    rules.style.display ="block";
+});
 
 //function to get to questions and start timer
 
+yeahBuddyBtn.document.addEventListener("click", function)
 //for loop for questions
 
 //function for correct points and total points stored and input on completed quiz and high scores
