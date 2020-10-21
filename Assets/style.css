@@ -23,7 +23,7 @@ body {
     display: none;
 }
 /* === POSITIONING GAME === */
-/* #enter-btn,
+#enter-btn,
 #rules,
 #questions,
 #completed-quiz,
@@ -34,9 +34,9 @@ body {
     transform: translate(-50%, -50%); 
 } */
 
-/* h2 {
+h2 {
     text-align: center;
-} */
+}
 
 /* === STYLING BUTTONS === */
 #yb-btn {

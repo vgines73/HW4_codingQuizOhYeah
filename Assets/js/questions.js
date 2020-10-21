@@ -1,4 +1,4 @@
-var questions = [
+var question = [
     {
         title: "what is a string?",
         choices: ["1", "number", "plain text", "a rope"],

@@ -6,9 +6,9 @@ var enterBtn = document.querySelector("#enter-btn");
 var rules = document.querySelector("#rules");
 var yeahBuddyBtn = document.querySelector("#yb-btn");
 var questions = document.querySelector("#questions");
-var questionsTitle = document.querySelector("#questions-title");
-var choices = document.querySelector("#choices");
-var answer = document.querySelector("#answer");
+var question = document.querySelector("#question");
+var choices = document.querySelector(".choices");
+var answer = document.querySelector(".answer");
 var completedQuiz = document.querySelector("#completed-quiz");
 var sumbitBtn = document.querySelector("#sbmt-btn");
 var highScores = document.querySelector("#high-scores");
@@ -18,15 +18,20 @@ var clearBtn = document.querySelector("#clear-btn");
 //function to get to rules
 enterBtn.addEventListener("click", function showRules() {
    
-    enterBtn.style.display ="none";
+    enterBtn.style.display = "none";
     
-    rules.style.display ="block";
+    rules.style.display = "block";
 });
 
 //function to get to questions and start timer
+yeahBuddyBtn.addEventListener("click", function showQuestions() {
 
-yeahBuddyBtn.document.addEventListener("click", function)
+    rules.style.display = "none";
+
+    questions.style.display = "block";
+});
 //for loop for questions
+    
 
 //function for correct points and total points stored and input on completed quiz and high scores
 
