@@ -9,10 +9,10 @@
 
 /* ==== BACKGROUND IMAGE ==== */
 body {
-    /* background-image: url(../Images/image1.jpg); */
+   /* background-image: url(../Images/image1.jpg); */
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: black;
+    background-color: black; 
 }
 
 /* === TIMER IN HEADER === */
@@ -39,7 +39,8 @@ h2 {
 }
 
 /* === STYLING BUTTONS === */
-#yb-btn {
+#yb-btn,
+.choices {
     width: 400px; 
     background-color: tomato;
 }

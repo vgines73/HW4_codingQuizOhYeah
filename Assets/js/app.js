@@ -10,6 +10,7 @@ var question = document.querySelector("#question");
 var choices = document.querySelector(".choices");
 var answer = document.querySelector(".answer");
 var completedQuiz = document.querySelector("#completed-quiz");
+var score = document.querySelector("#score")
 var sumbitBtn = document.querySelector("#sbmt-btn");
 var highScores = document.querySelector("#high-scores");
 var playBtn = document.querySelector("#play-btn");
@@ -29,11 +30,23 @@ yeahBuddyBtn.addEventListener("click", function showQuestions() {
     rules.style.display = "none";
 
     questions.style.display = "block";
-});
+
 //for loop for questions
     
+   //for (let i = 0; i < questions.length; i++) {
+//        const element = questions[i];  
+   //};
+// for loop for choices
+    //for (let i = 0; i < choices.length; i++) {
+//        const element = choices[i];
+        
+   // }
+});
 
 //function for correct points and total points stored and input on completed quiz and high scores
+var score = 0;
+
+
 
 //function for incorrect and reduce timer for each incorrect
 

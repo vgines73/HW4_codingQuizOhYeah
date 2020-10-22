@@ -1,4 +1,4 @@
-var question = [
+var questions = [
     {
         title: "what is a string?",
         choices: ["1", "number", "plain text", "a rope"],
@@ -25,3 +25,10 @@ var question = [
         answer: "Removes the first item of an array"
     }
 ];
+
+   for (let i = 0; i < questions.length; i++) {
+       const element = questions[i];  
+};  
+
+        
+    
