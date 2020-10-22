@@ -9,10 +9,10 @@
 
 /* ==== BACKGROUND IMAGE ==== */
 body {
-   /* background-image: url(../Images/image1.jpg); */
+    background-image: url(../Images/image1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: black; 
+   /* background-color: black; */
 }
 
 /* === TIMER IN HEADER === */
@@ -50,7 +50,9 @@ h2 {
     background-color: tomato;
     width: 80px;
 }
-
+.text-color {
+    color: black;
+}
 #play-btn,
 #clear-btn {
     background-color: tomato;

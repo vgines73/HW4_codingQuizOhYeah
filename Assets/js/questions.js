@@ -1,4 +1,4 @@
-var questions = [
+var q = [
     {
         title: "what is a string?",
         choices: ["1", "number", "plain text", "a rope"],
@@ -25,6 +25,7 @@ var questions = [
         answer: "Removes the first item of an array"
     }
 ];
+
 
 
         

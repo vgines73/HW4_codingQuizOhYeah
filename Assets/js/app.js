@@ -30,8 +30,8 @@ yeahBuddyBtn.addEventListener("click", startQuestions)
         questions.style.display = "block";
     
 
-// function to start timer
-    var sec = 30;
+    // function to start timer
+    var sec = 5;
     var time = setInterval(startTimer, 1000);
 
     function startTimer() {
@@ -39,23 +39,26 @@ yeahBuddyBtn.addEventListener("click", startQuestions)
         sec--;
         if (sec == -1) {
             clearInterval(time);
+            questions.style.display = "none";
+            completedQuiz.style.display = "block";
         }
         
     };
-    }
-
-
-
-//for loop for questions
     
-   //for (let i = 0; i < questions.length; i++) {
-//        const element = questions[i];  
-   //};
-// for loop for choices
+}
+
+
+
+// for loop for questions
+    
+   for (let i = 0; i < q.length; i++) {
+       console.log(q[i]);  
+   };
+//for loop for choices
     //for (let i = 0; i < choices.length; i++) {
-//        const element = choices[i];
+//console.log(choices[i]);
         
-   // }
+  // }
 
 
 //function for correct points and total points stored and input on completed quiz and high scores
@@ -66,7 +69,16 @@ var score = 0;
 //function for incorrect and reduce timer for each incorrect
 
 //function for completed quiz
+// sumbitBtn.addEventListener(click, highScores) //not working
 
-//function for high scores
+//     function highScores () {
+//         completedQuiz.style.display = "none";
+//         highScores.style.display = "block";
+//     };
 
-//function for play and clear scores
+
+// //function for high scores
+
+// //function for play and clear scores
+// playBtn.addEventListener("click", startQuestions)
+// clearBtn.addEventListener("click", reset)
