@@ -7,7 +7,6 @@ var rules = document.querySelector("#rules");
 var yeahBuddyBtn = document.querySelector("#yb-btn");
 var questions = document.querySelector("#questions");
 var title = document.querySelector("#title");
-var choices = document.querySelector(".choices");
 var answerA = document.querySelector("#A");
 var answerB = document.querySelector("#B");
 var answerC = document.querySelector("#C");
@@ -33,6 +32,7 @@ yeahBuddyBtn.addEventListener("click", startQuestions)
     function startQuestions () {
         rules.style.display = "none";
         questions.style.display = "block";
+        
     
 
     // function to start timer
@@ -52,40 +52,62 @@ yeahBuddyBtn.addEventListener("click", startQuestions)
 // function for user choice and points
 var score = 0;
 answerA.addEventListener("click", function () {
-    if (answerA === answer);
-    console.log(score);
+    if (answerA === answer) {
+    console.log(answerA);
     score++;
+    } else {
+        score--;
+        sec--;
+    }
 });
 
 answerB.addEventListener("click", function () {
-    if (answerB === answer);
+    if (answerB === answer) {
     console.log(score);
     score++;
+    } else {
+        score--;
+        sec--;
+    }
 });
 
 answerC.addEventListener("click", function () {
-    if (answerC === answer);
+    if (answerC === answer){
     console.log(score);
     score++;
+    } else {
+        score--;
+        sec--;
+    }
+    
 });
 
 answerD.addEventListener("click", function () {
-    if (answerD === answer);
+    if (answerD === answer){
     console.log(score);
     score++;
+    } else {
+        score--;
+        sec--;
+    }
 });
 
-
+// target questions section div
+var questionsDiv = document.getElementById("questions");
+var element = [title, choices, answer];
+q.forEach(element => {
+    questionsDiv.append(q);
+});
 // for loop for questions
-
+}
 //    for (var i = 0; i < q.length; i++) {
 //       console.log(q[i]);  
 //    };
-q.forEach(function(element){
-    console.log(element)
-});
-
-}
+//     var qRun = [] 
+//         q.forEach(function(element){
+//             q.push(element)
+//         });
+// }
 //function for total points stored and input on completed quiz and high scores
 
 
