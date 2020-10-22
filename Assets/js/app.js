@@ -93,20 +93,27 @@ answerD.addEventListener("click", function () {
 });
 
 // target questions section div
-var questionsDiv = document.getElementById("questions");
-var element = [title, choices, answer];
-q.forEach(element => {
-    questionsDiv.append(q);
+q = [];
+var questionDiv = document.getElementById("question");
+
+q.forEach(title => {
+    questionDiv.append(title);
 });
-// for loop for questions
+// target choices section div
+var choicesDiv = document.getElementsByClassName(".choices");
+q.forEach(choices => {
+    choicesDiv.append(choices);
+});
+
+// target answer section div
+var answerDiv = document.getElementById("answer");
+q.forEach(answer => {
+    answerDiv.append(answer);
+})
 }
 //    for (var i = 0; i < q.length; i++) {
 //       console.log(q[i]);  
-//    };
-//     var qRun = [] 
-//         q.forEach(function(element){
-//             q.push(element)
-//         });
+
 // }
 //function for total points stored and input on completed quiz and high scores
 

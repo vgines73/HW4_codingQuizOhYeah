@@ -14,7 +14,12 @@ body {
     background-repeat: no-repeat;
    /* background-color: black; */
 }
+.setting {
+    background-color: black;
+    opacity: .85;
+    padding: 10px; 
 
+}
 /* === TIMER IN HEADER === */
 .time {
     float: right;
@@ -32,20 +37,25 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
-} */
+} 
 
 h2 {
-    text-align: center;
+    text-align: center!important;
 }
 
 /* === STYLING BUTTONS === */
 #enter-btn,
-#yb-btn,
 .choices {
     width: 400px; 
     background-color: tomato;
     padding: 10px;
     margin: 5px;
+}
+#yb-btn {
+    width: auto;
+    background-color: tomato;
+    padding: 10px;
+    float: right;
 }
 
 #enter-btn,
@@ -60,4 +70,5 @@ h2 {
 #clear-btn {
     background-color: tomato;
     width: 200px;
+    
 }

@@ -28,23 +28,23 @@
 
         <!-- RULES OF THE GAME -->
         <section id="rules" class="hide">
-            <h2>Hello, I want to play a game.</h2>
-            <br>
-            <ol>
-                <li>Timer starts once you click the "YEAH BUDDY!" button.</li>
-                <li>Answer as many questions you can until the timer hits zero.</li>
-                <li>Each incorrect answer will reduce the timer.</li>
-                <li>Each correct answer will give you points.</li>
-                <li>You have 30 seconds...</li>
-            </ol>
-            <h3>The rules of the game have been made very clear...</h3> 
-            <h2>Let the games begin!</h2>
+            <h2 class="setting">Hello, I want to play a game...</h2>
+        
+            <ul class="setting">
+                <p>Timer starts once you click the "YEAH BUDDY!" button.</p>
+                <p>Answer as many questions you can until the timer hits zero.</p>
+                <p>Each incorrect answer will reduce the timer.</p>
+                <p>Each correct answer will give you points.</p>
+                <p>You have 60 seconds...</p>
+            </ul>
+            <h3 class="setting">The rules of the game have been made very clear...</h3> 
+            <h2 class="setting">Let the games begin!</h2>
             <button id="yb-btn">YEAH BUDDY!</button>
         </section>
 
         <!-- QUESTIONS -->
         <section id="questions" class="hide">
-            <h4 class="question" id ="title">What does API stand for?</h4>
+            <h4 class="question" class="setting" id ="title"></h4>
             <br>
             <ul>
                 <button class="choices" id="A"></button>
@@ -61,16 +61,16 @@
             
         <!-- COMPLETED THE QUIZ -->
         <section id="completed-quiz" class="hide">
-            <h2>Congratulations, You made it! AH YEAH! </h2>
+            <h2 class="setting">Congratulations, You made it! AH YEAH! </h2>
             
-            <p>You're final score is <span id="score"></span>!</p>
+            <p class="setting">You're final score is <span id="score"></span>!</p>
 
             <p>Enter initials:<input type="text" class="text-color" name="initials" id="initials"><button id="sbmt-btn">Submit</button></p>
         </section>
 
         <!-- HIGH SCORES LIST -->
         <section id="high-scores" class="hide">
-            <h2>High Scores</h2>
+            <h2 class="setting">High Scores</h2>
             <form id="high-scores-list" method="POST">
                 <label for="high-scores">AH YEAH! HIGH SCORES! AH YEAH!</label>
                 
@@ -80,10 +80,10 @@
         </section>
     </main>
 
+    <script src="./Assets/js/app.js"></script>
 
     <script src="./Assets/js/questions.js"></script>
 
-    <script src="./Assets/js/app.js"></script>
 
     <footer>
         <!--Image by <a href="https://pixabay.com/users/tama66-1032521/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4758676">Peter H</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4758676">Pixabay</a>-->

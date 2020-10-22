@@ -68,7 +68,7 @@ var q = [
         title: "What does arr.shift() do?",
         choices: ["Removes the first item of an array", "Adds to the beginning of an array", "Adds item to last array", "Removes last item to array"],
         answer: "Removes the first item of an array"
-    }    
+    },    
     {
         title: "What does arr.shift() do?",
         choices: ["Removes the first item of an array", "Adds to the beginning of an array", "Adds item to last array", "Removes last item to array"],
@@ -76,7 +76,11 @@ var q = [
     }
 ];
 
-
+// var questionsDiv = document.getElementById("questions");
+// var element = [title, answer];
+// q.forEach(element => {
+//     questionsDiv.append(q);
+// });
 
         
     
