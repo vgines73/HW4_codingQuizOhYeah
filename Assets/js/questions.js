@@ -26,9 +26,6 @@ var questions = [
     }
 ];
 
-   for (let i = 0; i < questions.length; i++) {
-       const element = questions[i];  
-};  
 
         
     
