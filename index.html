@@ -6,7 +6,6 @@
     <title>Javascript Quiz Saw Version</title>
     <link rel="stylesheet" href="./Assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
-    <script src="https://use.fontawesome.com/4fc2ccba86.js"></script>
 </head>
 <body>
 
@@ -27,7 +26,7 @@
         </section>
 
         <!-- RULES OF THE GAME -->
-        <section id="rules" class="hide">
+        <section id="rules-page" class="hide">
             <h2 class="setting">Hello, I want to play a game...</h2>
         
             <ul class="setting">
@@ -43,29 +42,30 @@
         </section>
 
         <!-- QUESTIONS -->
-        <section id="questions" class="hide">
-            <h4 class="question" class="setting" id ="title"></h4>
+        <section id="questions-page" class="hide">
+            <h1 class="question setting" id ="title"></h1>
             <br>
             <ul>
-                <button class="choices" id="A"></button>
+                <li class="choices" id="optionA" data-answer="A"></li>
                 <br>
-                <button class="choices" id="B"></button>
+                <li class="choices" id="optionB" data-answer="B"></li>
                 <br>
-                <button class="choices" id="C"></button>
+                <li class="choices" id="optionC" data-answer="C"></li>
                 <br>
-                <button class="choices" id="D"></button>
+                <li class="choices" id="optionD" data-answer="D"></li>
             </ul>
             <br>
             <p id="answer"></p>
         </section>
             
         <!-- COMPLETED THE QUIZ -->
-        <section id="completed-quiz" class="hide">
+        <section id="completed-quiz" class="hide"">
             <h2 class="setting">Congratulations, You made it! AH YEAH! </h2>
             
             <p class="setting">You're final score is <span id="score"></span>!</p>
 
-            <p>Enter initials:<input type="text" class="text-color" name="initials" id="initials"><button id="sbmt-btn">Submit</button></p>
+            <p class="setting">Enter initials:<input type="text" class="text-color" name="initials" id="initials"></p>
+            <button id="sbmt-btn">Submit</button>
         </section>
 
         <!-- HIGH SCORES LIST -->
@@ -81,7 +81,6 @@
     </main>
 
     <script src="./Assets/js/app.js"></script>
-
     <script src="./Assets/js/questions.js"></script>
 
 
