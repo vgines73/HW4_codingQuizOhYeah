@@ -1,39 +1,10 @@
-questions for quiz
-
-1. What does arr.push() do?
-Adds item to last array *
-Removes last item to array
-Adds item to the beginning of an array
-Removes the first item of an array
-
-2. What does arr.pop() do?
-Removes last item to array *
-Adds item to last array 
-Adds item to the beginning of an array
-Removes the first item of an array
-
-3. What does arr.unshift() do?
-Adds to the beginning of an array *
-Adds item to last array 
-Removes last item to array
-Removes the first item of an array
-
-
-4. What does arr.shift() do?
-Removes the first item *
-Removes the first item of an array
-Adds item to last array 
-Adds to the beginning of an array 
 
 
 5. True or False. 4 types of Javascript values are: Numbers, Strings, Booleans, and Undefined values?
 True *
 False
 
-6. How do we comment in Javascript?
-// *
-<!-->
-/* */
+
 
 7. Do we use functions in Javascript?
 Yes *
@@ -44,31 +15,12 @@ True *
 False
 
 
-9.What does console.log() mean in Javascript?
-It's a function which is used to print any kind of variables defined before in it or to just print any message that needs to be dispayed to the user. *
-It's a gaming system.
-It's to comfort sad logs.
-It's a function you use to save data.
 
 
-10. i++ is a shortcut for?
-i + 1 *
-i = i
-i - 1
-i = 0
-
-11. What are the 3 building blocks of the Web?
-HTML, CSS, Javascript *
-Variables, Functions, For Loops
-Strings, Arrays, Booleans
-querySelector, getAttribute, setAttribute
 
 
-12. What  does API stand for?
-Application Programming Interface *
-Apples, Pineapples, Ice Cream
-Add Per Index
-Access Program Interface
+
+
 
 13. T or F. Web APIs are built into the web browser and contain methods that allow us to manipuate a webpage using Javascript.
 True *
@@ -78,17 +30,9 @@ False
 True *
 False
 
-15. What does BOM stand for?
-Browser Object Model *
-Browser Object Menu
-Build Object Model
-Build Object Menu
 
-16. What does DOM stand for?
-Document Object Model *
-Display Object Model
-Defined Object Model
-Document Object Menu
+
+
 
 17. What is DOM?
 It's an object-oriented representation of HTML. *
@@ -96,12 +40,6 @@ It's a Domino.
 It's short for Domain.
 It's a Word document.
 
-
-18. What are we doing here? document.body.children[1]);
-Traversing the DOM. *
-Traversing the BOM.
-Traversing inside CSS.
-Traversing inside Javascript.
 
 19. Can you set attributes in Javascript?
 Yes *
