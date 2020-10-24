@@ -13,6 +13,8 @@ var highScoresList = document.querySelector("#high-scores-list");
 var initials = document.querySelector("#initials");
 var playBtn = document.querySelector("#play-btn");
 var clearBtn = document.querySelector("#clear-btn");
+// q = [];
+var time;
 
 // function to get to rules
 enterBtn.addEventListener("click", showRules)
@@ -35,12 +37,68 @@ var optionD = document.querySelector("#optionD");
 var sec = 60;
 
 //function to start the questions
+function askQuestion() {
+    // console.log(myQuestions[questionsPointer].q)
+    title.textContent = myQuestions[questionsPointer].q;
+    optionA.textContent = myQuestions[questionsPointer].choices[0];
+    optionB.textContent = myQuestions[questionsPointer].choices[1];
+    optionC.textContent = myQuestions[questionsPointer].choices[2];
+    optionD.textContent = myQuestions[questionsPointer].choices[3];
+
+        // what happens if user picks correctly
+        optionA.addEventListener("click", function () {
+            if(optionA.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
+                //console.log("this is correct")
+                questionsPointer++;
+                userScore += 10;
+                startQuestions()
+            }
+        });
+    
+        optionB.addEventListener("click", function () {
+            if(optionB.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
+                //console.log("this is correct")
+                questionsPointer++;
+                userScore += 10;
+                startQuestions() 
+            }
+        });
+    
+        optionC.addEventListener("click", function () {
+            if(optionC.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
+                //console.log("this is correct")
+                questionsPointer++;
+                userScore += 10;
+                startQuestions()
+    
+            }
+        });
+    
+        optionD.addEventListener("click", function () {
+            if(optionD.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
+                //console.log("this is correct")
+                questionsPointer++;
+                userScore += 10;
+                startQuestions()
+      
+            }
+        });
+    
+        // what happens when user picks incorrectly
+        if (this.value !== myQuestions[questionsPointer].answer){
+            sec -= 10;
+            
+            if (sec < 0) {
+                sec = 0;
+            }
+        }
+    
+}
 function startQuestions() {
     rulesPage.style.display = "none";
     questionsPage.style.display = "block";
     
     // alert for finishing the quiz early
-    
     if(questionsPointer === myQuestions.length){
         clearInterval(startTimer)
         alert("YEAH BUDDY! You survived and finished early " + sec + " seconds left");
@@ -48,102 +106,37 @@ function startQuestions() {
         completedQuiz.style.display = "block";
         
     }
-    //startQuestions()
-    title.textContent = myQuestions[questionsPointer].q;
-    optionA.textContent = myQuestions[questionsPointer].choices[0];
-    optionB.textContent = myQuestions[questionsPointer].choices[1];
-    optionC.textContent = myQuestions[questionsPointer].choices[2];
-    optionD.textContent = myQuestions[questionsPointer].choices[3];
+    askQuestion()
 
-    // what happens if user picks correctly/incorrectly
-    optionA.addEventListener("click", function () {
-        if(optionA.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
-            //console.log("this is correct")
-            questionsPointer++;
-            userScore += 10;
-            startQuestions()
-                if (sec > 0) {
-                    sec--;
-                }
-        } else {
-            //console.log("wrong")
-            sec -= 10;
-           
-        }
-    })
 
-    optionB.addEventListener("click", function () {
-        if(optionB.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
-            //console.log("this is correct")
-            questionsPointer++;
-            userScore += 10;
-            startQuestions() 
-                if (sec > 0) {
-                    sec--;
-                }
-            
-        } else {
-            //console.log("wrong")
-            sec -= 10;     
-        }
-    })
-
-    optionC.addEventListener("click", function () {
-        if(optionC.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
-            //console.log("this is correct")
-            questionsPointer++;
-            userScore += 10;
-            startQuestions()
-                if (sec > 0) {
-                    sec--;
-                }
-
-        } else {
-            //console.log("wrong")
-            sec -= 10;
-            
-        }
-    })
-
-    optionD.addEventListener("click", function () {
-        if(optionD.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
-            //console.log("this is correct")
-            questionsPointer++;
-            userScore += 10;
-            startQuestions()
-                if (sec > 0) {
-                    sec--;
-                }
-        } else {
-            //console.log("wrong")
-            sec -= 10;
-            
-        }
-    })
+    
+}    
 
     // function to start timer
-    
-    var time = setInterval(startTimer, 1000);
 
-    function startTimer() {
-        
-        document.getElementById("seconds").innerHTML = (sec + "seconds left");
-        sec--;
-        if (sec === -1) {
-            clearInterval(time);
-            questionsPage.style.display = "none";
-            completedQuiz.style.display = "block";
-        }
-        
-    };
-}
+function startTimer() {
+
+    time = setInterval(startTimer, 1000);
+
+    document.getElementById("seconds").innerHTML = (sec + "seconds left");
+    sec--;
+    if (sec === 0) {
+        clearInterval(time);
+        questionsPage.style.display = "none";
+        completedQuiz.style.display = "block";
+    }
+    
+};
+
+
 
 //function for final user score and submit 
 
 function getFinalScore () {
-    getFinalScore.push(userScore)
+    
     userScore.textContent(score)
-    console.log(userScore)
+    userScore.appendChild("#score")
+    //console.log(userScore)
     sumbitBtn.addEventListener("click", highScoresPage) 
         completedQuiz.style.display = "none";
         highScores.style.display = "block";
