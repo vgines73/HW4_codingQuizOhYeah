@@ -48,7 +48,7 @@ function startQuestions() {
         completedQuiz.style.display = "block";
         
     }
-
+    //startQuestions()
     title.textContent = myQuestions[questionsPointer].q;
     optionA.textContent = myQuestions[questionsPointer].choices[0];
     optionB.textContent = myQuestions[questionsPointer].choices[1];
@@ -62,6 +62,9 @@ function startQuestions() {
             questionsPointer++;
             userScore += 10;
             startQuestions()
+                if (sec > 0) {
+                    sec--;
+                }
         } else {
             //console.log("wrong")
             sec -= 10;
@@ -74,11 +77,14 @@ function startQuestions() {
             //console.log("this is correct")
             questionsPointer++;
             userScore += 10;
-            startQuestions()
+            startQuestions() 
+                if (sec > 0) {
+                    sec--;
+                }
+            
         } else {
             //console.log("wrong")
-            sec -= 10;
-           
+            sec -= 10;     
         }
     })
 
@@ -88,6 +94,10 @@ function startQuestions() {
             questionsPointer++;
             userScore += 10;
             startQuestions()
+                if (sec > 0) {
+                    sec--;
+                }
+
         } else {
             //console.log("wrong")
             sec -= 10;
@@ -101,6 +111,9 @@ function startQuestions() {
             questionsPointer++;
             userScore += 10;
             startQuestions()
+                if (sec > 0) {
+                    sec--;
+                }
         } else {
             //console.log("wrong")
             sec -= 10;
@@ -109,7 +122,7 @@ function startQuestions() {
     })
 
     // function to start timer
-    sec = 60;
+    
     var time = setInterval(startTimer, 1000);
 
     function startTimer() {
@@ -131,7 +144,10 @@ function getFinalScore () {
     getFinalScore.push(userScore)
     userScore.textContent(score)
     console.log(userScore)
-    sumbitBtn.addEventListener(click, highScores) //not working
+    sumbitBtn.addEventListener("click", highScoresPage) 
+        completedQuiz.style.display = "none";
+        highScores.style.display = "block";
+    
 };
 
 
@@ -139,8 +155,7 @@ function getFinalScore () {
 
 //function for highScores page and store Scores in localstorage
     function highScoresPage () {
-        completedQuiz.style.display = "none";
-        highScores.style.display = "block";
+
         var storedScores = JSON.parse(localStorage.getItem("score"));
         if (storedScores !== null) {
             score = storedScores;
