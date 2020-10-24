@@ -6,10 +6,11 @@ var rulesPage = document.querySelector("#rules-page");
 var yeahBuddyBtn = document.querySelector("#yb-btn");
 var questionsPage = document.querySelector("#questions-page");
 var completedQuiz = document.querySelector("#completed-quiz");
-var userScore = document.querySelector("#score")
+var score = document.querySelector("#score")
 var sumbitBtn = document.querySelector("#sbmt-btn");
-var highScores = document.querySelector("#high-scores");
+var highScoresPage = document.querySelector("#high-scores");
 var highScoresList = document.querySelector("#high-scores-list");
+var initials = document.querySelector("#initials");
 var playBtn = document.querySelector("#play-btn");
 var clearBtn = document.querySelector("#clear-btn");
 
@@ -24,7 +25,7 @@ function showRules() {
 yeahBuddyBtn.addEventListener("click", startQuestions)
 
 var questionsPointer = 0;
-var userScore = 0
+var userScore = 0;
 
 var title = document.querySelector("#title");
 var optionA = document.querySelector("#optionA");
@@ -53,13 +54,13 @@ function startQuestions() {
     optionB.textContent = myQuestions[questionsPointer].choices[1];
     optionC.textContent = myQuestions[questionsPointer].choices[2];
     optionD.textContent = myQuestions[questionsPointer].choices[3];
-    
+
     // what happens if user picks correctly/incorrectly
     optionA.addEventListener("click", function () {
         if(optionA.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
             //console.log("this is correct")
             questionsPointer++;
-            userScore++;
+            userScore += 10;
             startQuestions()
         } else {
             //console.log("wrong")
@@ -72,7 +73,7 @@ function startQuestions() {
         if(optionB.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
             //console.log("this is correct")
             questionsPointer++;
-            userScore++;
+            userScore += 10;
             startQuestions()
         } else {
             //console.log("wrong")
@@ -85,7 +86,7 @@ function startQuestions() {
         if(optionC.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
             //console.log("this is correct")
             questionsPointer++;
-            userScore++;
+            userScore += 10;
             startQuestions()
         } else {
             //console.log("wrong")
@@ -98,7 +99,7 @@ function startQuestions() {
         if(optionD.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
             //console.log("this is correct")
             questionsPointer++;
-            userScore++;
+            userScore += 10;
             startQuestions()
         } else {
             //console.log("wrong")
@@ -112,6 +113,7 @@ function startQuestions() {
     var time = setInterval(startTimer, 1000);
 
     function startTimer() {
+        
         document.getElementById("seconds").innerHTML = (sec + "seconds left");
         sec--;
         if (sec === -1) {
@@ -122,27 +124,37 @@ function startQuestions() {
         
     };
 }
-//function for total points stored and input on completed quiz and high scores
 
+//function for final user score and submit 
 
-
-
-
-
-//function for completed quiz page
 function getFinalScore () {
-    userScore.textContent = userScore
+    getFinalScore.push(userScore)
+    userScore.textContent(score)
+    console.log(userScore)
     sumbitBtn.addEventListener(click, highScores) //not working
 };
 
 
 
 
-//function for highScores page
-    function highScores () {
-
+//function for highScores page and store Scores in localstorage
+    function highScoresPage () {
         completedQuiz.style.display = "none";
         highScores.style.display = "block";
+        var storedScores = JSON.parse(localStorage.getItem("score"));
+        if (storedScores !== null) {
+            score = storedScores;
+        }
+
+        renderScores(); {
+        }
+
+        function storeScores() {
+            localStorage.setItem("score", JSON.stringify(todos));
+        }
+        highScoresList.innerHTML = "";
+
+
     
 
         //function for play and clear scores
