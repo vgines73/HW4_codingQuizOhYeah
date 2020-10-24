@@ -15,6 +15,7 @@ var playBtn = document.querySelector("#play-btn");
 var clearBtn = document.querySelector("#clear-btn");
 // q = [];
 var time;
+var gameOn;
 
 // function to get to rules
 enterBtn.addEventListener("click", showRules)
@@ -28,14 +29,55 @@ yeahBuddyBtn.addEventListener("click", startQuestions)
 
 var questionsPointer = 0;
 var userScore = 0;
-
+var sec = 60;
 var title = document.querySelector("#title");
 var optionA = document.querySelector("#optionA");
 var optionB = document.querySelector("#optionB");
 var optionC = document.querySelector("#optionC");
 var optionD = document.querySelector("#optionD");
-var sec = 60;
 
+// events
+optionA.addEventListener("click", function (e){
+    checkAnswer(e);
+});
+optionB.addEventListener("click", function (e){
+    checkAnswer(e);
+});
+optionC.addEventListener("click", function (e){
+    checkAnswer(e);
+});
+optionD.addEventListener("click", function (e){
+    checkAnswer(e);
+});
+
+//function to check answers
+function checkAnswer(e) {
+    //console.log(e.target);
+    if (
+        e.target.getAttribute("data-answer") === myQuestions[questionsPointer].answer
+    ) {
+        console.log("YEAH BUDDY!");
+        userScore += 10;
+    } else {
+        console.log("")
+    }
+}
+//start questions page
+function startQuestions() {
+    rulesPage.style.display = "none";
+    questionsPage.style.display = "block";
+
+    // alert for finishing the quiz early
+    if(questionsPointer === myQuestions.length){
+        clearInterval(startTimer)
+        alert("YEAH BUDDY! You survived and finished early " + sec + " seconds left");
+        questionsPage.style.display = "none";
+        completedQuiz.style.display = "block";
+        
+    }
+    askQuestion()  
+   // startTimer()  
+};  
 //function to start the questions
 function askQuestion() {
     // console.log(myQuestions[questionsPointer].q)
@@ -57,7 +99,7 @@ function askQuestion() {
     
         optionB.addEventListener("click", function () {
             if(optionB.getAttribute("data-answer") === myQuestions[questionsPointer].answer) {
-                //console.log("this is correct")
+                console.log("this is correct")
                 questionsPointer++;
                 userScore += 10;
                 startQuestions() 
@@ -94,25 +136,9 @@ function askQuestion() {
         }
     
 }
-function startQuestions() {
-    rulesPage.style.display = "none";
-    questionsPage.style.display = "block";
-    
-    // alert for finishing the quiz early
-    if(questionsPointer === myQuestions.length){
-        clearInterval(startTimer)
-        alert("YEAH BUDDY! You survived and finished early " + sec + " seconds left");
-        questionsPage.style.display = "none";
-        completedQuiz.style.display = "block";
-        
-    }
-    askQuestion()
+ 
 
-
-    
-}    
-
-    // function to start timer
+// function to start timer
 
 function startTimer() {
 
@@ -147,25 +173,25 @@ function getFinalScore () {
 
 
 //function for highScores page and store Scores in localstorage
-    function highScoresPage () {
+function highScoresPage () {
 
-        var storedScores = JSON.parse(localStorage.getItem("score"));
-        if (storedScores !== null) {
-            score = storedScores;
-        }
+    var storedScores = JSON.parse(localStorage.getItem("score"));
+    if (storedScores !== null) {
+        score = storedScores;
+    }
 
-        renderScores(); {
-        }
+    renderScores(); {
+    }
 
-        function storeScores() {
-            localStorage.setItem("score", JSON.stringify(todos));
-        }
-        highScoresList.innerHTML = "";
+    function storeScores() {
+        localStorage.setItem("score", JSON.stringify(todos));
+    }
+    highScoresList.innerHTML = "";
 
 
     
 
-        //function for play and clear scores
-        playBtn.addEventListener("click", startQuestions);
-        clearBtn.addEventListener("click", reset);
-    };
+//function for play and clear scores
+playBtn.addEventListener("click", startQuestions);
+clearBtn.addEventListener("click", reset);
+};
