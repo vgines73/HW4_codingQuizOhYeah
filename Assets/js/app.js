@@ -9,7 +9,6 @@ var score = document.querySelector("#score");
 var sumbitBtn = document.querySelector("#sbmt-btn");
 var highScoresPage = document.querySelector("#high-scores");
 var highScoresList = document.querySelector("#high-scores-list");
-//var initials = document.querySelector("#initials");
 var playBtn = document.querySelector("#play-btn");
 var clearBtn = document.querySelector("#clear-btn");
 var time;

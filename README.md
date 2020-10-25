@@ -15,7 +15,14 @@ The criteria needed for quiz
 - if all questions are answered or timer reaches 0 the game is over.
 - once the game is over, user receives scores and input initals and will sumbit it and will appear on high scores list.
 
-video
-screenshot
-url
-github url
+[screencapture-vgines73-github-io-HW4-codingQuizOhYeah-2020-10-24-23_48_01 (1).pdf](https://github.com/vgines73/HW4_codingQuizOhYeah/files/5434255/screencapture-vgines73-github-io-HW4-codingQuizOhYeah-2020-10-24-23_48_01.1.pdf)
+
+https://vgines73.github.io/HW4_codingQuizOhYeah/
+
+https://github.com/vgines73/HW4_codingQuizOhYeah
+
+This assignment was really hard. I felt like I spent over 20 hours trying to finish this. I came coming across a ton of issues/errors.
+I ended up getting stuck after completing the quiz. The submit button wouldn't console.log so I knew I wouldn't be able to put it in local storage. Which I was not able to create an updated high score page.
+
+Another issue I had was after completing the quiz, the game would refresh after the submit button.
+So I was not able to finish this assignment. 
