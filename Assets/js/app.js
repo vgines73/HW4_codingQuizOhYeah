@@ -22,7 +22,7 @@ function showRules() {
     rulesPage.style.display = "block";
 }
 
-// function to get to questions page and start questions and timer
+// Button to start generate the questions page
 yeahBuddyBtn.addEventListener("click", startQuiz);
 
 var questionsPointer = 0;
@@ -69,6 +69,18 @@ function checkAnswer(e) {
     }
 }
 
+// function to start the quiz, askquestions, and timer
+time = setInterval(startTimer, 1000);
+
+function startQuiz() {
+    gameOn = true;
+    rulesPage.style.display = "none";
+    questionsPage.style.display = "block";
+
+    askQuestion();
+    startTimer();
+    
+}
 //function to ask the questions
 function askQuestion() {
     if (gameOn) {
@@ -108,16 +120,6 @@ function gameOver() {
 
     getFinalScore();
 }
-// function to start the quiz, askquestions, and timer
-time = setInterval(startTimer, 1000);
-function startQuiz() {
-    gameOn = true;
-    rulesPage.style.display = "none";
-    questionsPage.style.display = "block";
-
-    askQuestion();
-    startTimer();
-}
 
 // function to start timer
 function startTimer() {
@@ -134,35 +136,33 @@ var inputForm = document.querySelector("inputForm");
 var initials = document.querySelector("#initials");
 
 //function for final user score and submit initials and score
+
+var userNameAndScore = {
+    userName: initials,
+    userScore: score
+}
 function getFinalScore() {
     console.log("final score");
-    clearInterval(time)
+    clearInterval(time);
     score.textContent = userScore;
     console.log(userScore);
     sumbitBtn.addEventListener("submit", function (e){
         e.preventDefault();
-        console.log(initials)
+        console.log(initials);
     });
+    highScores();
     completedQuiz.style.display = "block";
-    
+    return
 }
+playBtn.addEventListener("click", askQuestion);
+function highScores (){
+    window.localStorage.setItem("userNameAndScores", JSON.stringify(userNameAndScore))
+}
+var lastUser = window.localStorage.getItem("userNameAndScores");
+console.log(JSON.parse(lastUser));
+highScoresList.innerHTML = "";
+playBtn.addEventListener("click", askQuestion);
+clearBtn.addEventListener("click", "");
 
 
-//function for highScores page and store Scores in localstorage
-
-//     var storedScores = JSON.parse(localStorage.getItem("score"));
-//     if (storedScores !== null) {
-//         score = storedScores;
-//     }
-
-//     renderScores();
-
-//     function storeScores() {
-//         localStorage.setItem("score", JSON.stringify(todos));
-//     }
-//     highScoresList.innerHTML = "";
-
-    //function for play and clear scores
-    playBtn.addEventListener("click", askQuestion);
-    //clearBtn.addEventListener("click", "")
 
