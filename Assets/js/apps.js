@@ -12,6 +12,7 @@ var highScoresList = document.querySelector("#high-scores-list");
 var initials = document.querySelector("#initials");
 var playBtn = document.querySelector("#play-btn");
 var clearBtn = document.querySelector("#clear-btn");
+// q = [];
 var time;
 var gameOn;
 
@@ -52,7 +53,6 @@ optionD.addEventListener("click", function (e) {
     checkAnswer(e);
 });
 
-// conditions for correct and incorrect answers
 function checkAnswer(e) {
     //   console.log(e.target);
     if (
@@ -65,11 +65,10 @@ function checkAnswer(e) {
     } else {
         console.log("INCORRECT!");
         isGameOver();
-        sec -= 5;
     }
 }
 
-//function to ask the questions
+//function to start the questions
 function askQuestion() {
     if (gameOn) {
         console.log("asking question again");
@@ -80,7 +79,7 @@ function askQuestion() {
         optionD.textContent = myQuestions[questionsPointer].choices[3];
     }
 }
-// function to find out if game is over
+
 function isGameOver() {
     console.log(`the current question is: ${questionsPointer}`);
     console.log(`number of questions: ${myQuestions.length}`);
@@ -95,74 +94,70 @@ function isGameOver() {
         askQuestion();
     }
 }
-// when the game is over
+
 function gameOver() {
     gameOn = false;
     console.log("game over");
-    if (sec <= 0) {
-    clearInterval(time);
-    }
+    //   clearInterval(startTimer);
     alert("YEAH BUDDY! You survived and finished early " + sec + " seconds left");
     questionsPage.style.display = "none";
     completedQuiz.style.display = "block";
-
     getFinalScore();
 }
-// function to start the quiz, askquestions, and timer
-time = setInterval(startTimer, 1000);
+
 function startQuiz() {
     gameOn = true;
     rulesPage.style.display = "none";
     questionsPage.style.display = "block";
 
     askQuestion();
-    startTimer();
 }
 
 // function to start timer
-function startTimer() {
 
-  document.getElementById("seconds").innerHTML = sec + "seconds left";
-  sec--;
-  if (sec <= 0) {
-    clearInterval(time);
-    questionsPage.style.display = "none";
-    completedQuiz.style.display = "block";
-  }
-}
-var inputForm = document.querySelector("inputForm");
-var inputText = document.querySelector("#inputText");
+// function startTimer() {
+//   time = setInterval(startTimer, 1000);
 
-//function for final user score and submit initials and score
+//   document.getElementById("seconds").innerHTML = sec + "seconds left";
+//   sec--;
+//   if (sec === 0) {
+//     clearInterval(time);
+//     questionsPage.style.display = "none";
+//     completedQuiz.style.display = "block";
+//   }
+// }
+
+//function for final user score and submit
+
 function getFinalScore() {
-    console.log("final score");
-    clearInterval(time)
+    console.log("yo");
+    //   userScore.textContent(score);
+    //   userScore.textContent = score;
     score.textContent = userScore;
+    //   userScore.appendChild("#score");
     console.log(userScore);
-    sumbitBtn.addEventListener("submit", function (e){
-        e.preventDefault();
-        console.log(inputText.value)
-    });
+    sumbitBtn.addEventListener("click", highScoresPage);
     completedQuiz.style.display = "block";
-    
+    //   highScores.style.display = "block";
+    highScoresList.style.display = "block";
 }
-
 
 //function for highScores page and store Scores in localstorage
+function highScoresPage() {
+    var storedScores = JSON.parse(localStorage.getItem("score"));
+    if (storedScores !== null) {
+        score = storedScores;
+    }
 
-//     var storedScores = JSON.parse(localStorage.getItem("score"));
-//     if (storedScores !== null) {
-//         score = storedScores;
-//     }
+    renderScores();
 
-//     renderScores();
-
-//     function storeScores() {
-//         localStorage.setItem("score", JSON.stringify(todos));
-//     }
-//     highScoresList.innerHTML = "";
+    function storeScores() {
+        localStorage.setItem("score", JSON.stringify(todos));
+    }
+    highScoresList.innerHTML = "";
 
     //function for play and clear scores
-    // playBtn.addEventListener("click", startQuestions);
-    // clearBtn.addEventListener("click", reset);
-
+    playBtn.addEventListener("click", startQuestions);
+    clearBtn.addEventListener("click", reset)
+    clearBtn.textContent("Clear High Scores")
+}
