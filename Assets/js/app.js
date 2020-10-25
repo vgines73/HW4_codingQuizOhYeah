@@ -145,18 +145,22 @@ var userNameAndScore = {
     userName: initials.value,
     userScored: score.value
 }
-function getFinalScore() {
+function getFinalScore() {    
     console.log("final score");
     clearInterval(time);
     score.textContent = userScore;
     console.log(userScore);
-    sumbitBtn.addEventListener("submit", highScores());
+    sumbitBtn.addEventListener("click", highScores);
     completedQuiz.style.display = "block";
     enterBtn.style.display = "none";
 }
 
 // to store high scores using local storage
 function highScores (){
+    submitBtn.addEventListener("click", function(event){
+        event.preventDefault;
+    })
+    
     localStorage.setItem("userNameAndScores", JSON.stringify(userNameAndScore))
 }
 var lastUser = window.localStorage.getItem("userNameAndScores");
