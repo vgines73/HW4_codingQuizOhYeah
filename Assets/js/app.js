@@ -108,15 +108,17 @@ function isGameOver() {
 function gameOver() {
     gameOn = false;
     console.log("game over");
-    clearInterval(startTimer);
+    if (sec <= 0) {
+    clearInterval(time);
+    }
     alert("YEAH BUDDY! You survived and finished early " + sec + " seconds left");
     questionsPage.style.display = "none";
     completedQuiz.style.display = "block";
-    // need a condition to say if game is over
-    // or else keep asking questions
+
     getFinalScore();
 }
 
+time = setInterval(startTimer, 1000);
 function startQuiz() {
     gameOn = true;
     rulesPage.style.display = "none";
@@ -129,11 +131,10 @@ function startQuiz() {
 // function to start timer
 
 function startTimer() {
-  time = setInterval(startTimer, 1000);
 
   document.getElementById("seconds").innerHTML = sec + "seconds left";
   sec--;
-  if (sec === 0) {
+  if (sec <= 0) {
     clearInterval(time);
     questionsPage.style.display = "none";
     completedQuiz.style.display = "block";
@@ -144,7 +145,7 @@ function startTimer() {
 
 function getFinalScore() {
     console.log("final score");
-
+    clearInterval(time)
     score.textContent = userScore;
     
     console.log(userScore);
