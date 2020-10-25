@@ -137,14 +137,12 @@ var initials = document.querySelector("#initials");
 //function for final user score and submit initials and score
 
 var userNameAndScore = {
-    userName: initials,
-    userScore: score
+    userName: initials.value,
+    userScore: score.value
 }
 function getFinalScore() {
     console.log("final score");
     clearInterval(time);
-    score.textContent = userScore;
-    console.log(userScore);
     sumbitBtn.addEventListener("submit", function (e){
         e.preventDefault();
         console.log(initials);
