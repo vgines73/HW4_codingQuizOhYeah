@@ -158,10 +158,14 @@ function highScores (){
     window.localStorage.setItem("userNameAndScores", JSON.stringify(userNameAndScore))
 }
 var lastUser = window.localStorage.getItem("userNameAndScores");
+var clear
 console.log(JSON.parse(lastUser));
 highScoresList.innerHTML = "";
 playBtn.addEventListener("click", askQuestion);
-clearBtn.addEventListener("click", "");
+clearBtn.addEventListener("click", reset)
+function reset() {
+    document.getElementById(highScoresList).reset();
+}
 
 
 
