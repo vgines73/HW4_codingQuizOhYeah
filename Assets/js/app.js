@@ -14,6 +14,9 @@ var clearBtn = document.querySelector("#clear-btn");
 var time;
 var gameOn;
 
+//enter button to click to get to rules
+enterBtn.style.display = "block";
+
 // function to get to rules
 enterBtn.addEventListener("click", showRules);
 function showRules() {
@@ -21,7 +24,7 @@ function showRules() {
     rulesPage.style.display = "block";
 }
 
-// Button to start generate the questions page
+// Button to start and generate the questions page
 yeahBuddyBtn.addEventListener("click", startQuiz);
 
 var questionsPointer = 0;
@@ -116,6 +119,7 @@ function gameOver() {
     alert("YEAH BUDDY! You survived and finished early " + sec + " seconds left");
     questionsPage.style.display = "none";
     completedQuiz.style.display = "block";
+    enterBtn.style.display = "none"
 
     getFinalScore();
 }
@@ -129,6 +133,7 @@ function startTimer() {
     clearInterval(time);
     questionsPage.style.display = "none";
     completedQuiz.style.display = "block";
+    enterBtn.style.display = "none"
   }
 }
 var inputForm = document.querySelector("inputForm");
@@ -138,32 +143,32 @@ var initials = document.querySelector("#initials");
 
 var userNameAndScore = {
     userName: initials.value,
-    userScore: score.value
+    userScored: score.value
 }
 function getFinalScore() {
     console.log("final score");
     clearInterval(time);
-    sumbitBtn.addEventListener("submit", function (e){
-        e.preventDefault();
-        console.log(initials);
-    });
-    highScores();
+    score.textContent = userScore;
+    console.log(userScore);
+    sumbitBtn.addEventListener("submit", highScores());
     completedQuiz.style.display = "block";
-    return
+    enterBtn.style.display = "none";
 }
-playBtn.addEventListener("click", askQuestion);
+
+// to store high scores using local storage
 function highScores (){
-    window.localStorage.setItem("userNameAndScores", JSON.stringify(userNameAndScore))
+    localStorage.setItem("userNameAndScores", JSON.stringify(userNameAndScore))
 }
 var lastUser = window.localStorage.getItem("userNameAndScores");
-var clear
 console.log(JSON.parse(lastUser));
 highScoresList.innerHTML = "";
 playBtn.addEventListener("click", askQuestion);
 clearBtn.addEventListener("click", reset)
+
+// to reset high scores page
 function reset() {
     document.getElementById(highScoresList).reset();
-}
+}   
 
 
 
