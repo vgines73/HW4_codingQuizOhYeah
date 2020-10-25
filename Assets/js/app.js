@@ -9,7 +9,7 @@ var score = document.querySelector("#score");
 var sumbitBtn = document.querySelector("#sbmt-btn");
 var highScoresPage = document.querySelector("#high-scores");
 var highScoresList = document.querySelector("#high-scores-list");
-var initials = document.querySelector("#initials");
+//var initials = document.querySelector("#initials");
 var playBtn = document.querySelector("#play-btn");
 var clearBtn = document.querySelector("#clear-btn");
 var time;
@@ -86,7 +86,7 @@ function isGameOver() {
     console.log(`number of questions: ${myQuestions.length}`);
     if (questionsPointer === myQuestions.length - 1) {
         console.log(`questionsPointer is ${questionsPointer}`);
-        //     console.log("GAME OVER");
+        //console.log("GAME OVER");
         gameOver();
     } else {
         console.log("no game is not over");
@@ -99,7 +99,7 @@ function isGameOver() {
 function gameOver() {
     gameOn = false;
     console.log("game over");
-    if (sec <= 0) {
+    if (sec <= -1) {
     clearInterval(time);
     }
     alert("YEAH BUDDY! You survived and finished early " + sec + " seconds left");
@@ -124,14 +124,14 @@ function startTimer() {
 
   document.getElementById("seconds").innerHTML = sec + "seconds left";
   sec--;
-  if (sec <= 0) {
+  if (sec <= -1) {
     clearInterval(time);
     questionsPage.style.display = "none";
     completedQuiz.style.display = "block";
   }
 }
 var inputForm = document.querySelector("inputForm");
-var inputText = document.querySelector("#inputText");
+var initials = document.querySelector("#initials");
 
 //function for final user score and submit initials and score
 function getFinalScore() {
@@ -141,7 +141,7 @@ function getFinalScore() {
     console.log(userScore);
     sumbitBtn.addEventListener("submit", function (e){
         e.preventDefault();
-        console.log(inputText.value)
+        console.log(initials)
     });
     completedQuiz.style.display = "block";
     
@@ -163,6 +163,6 @@ function getFinalScore() {
 //     highScoresList.innerHTML = "";
 
     //function for play and clear scores
-    // playBtn.addEventListener("click", startQuestions);
-    // clearBtn.addEventListener("click", reset);
+    playBtn.addEventListener("click", askQuestion);
+    //clearBtn.addEventListener("click", "")
 
