@@ -153,7 +153,10 @@ function getFinalScore() {
     completedQuiz.style.display = "block";
     sumbitBtn.addEventListener("click", function (event) {
         event.preventDefault();
+        highScores();
+        completedQuiz.style.display = "none"
     })
+    
 }
 
 // to load high score list and store high scores using local storage
