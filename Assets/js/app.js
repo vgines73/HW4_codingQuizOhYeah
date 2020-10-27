@@ -80,7 +80,7 @@ function startQuiz() {
     questionsPage.style.display = "block";
 
     askQuestion();
-    startTimer();
+    //startTimer();
 
 }
 //function to ask the questions
@@ -119,9 +119,9 @@ function gameOver() {
     alert("YEAH BUDDY! You survived and finished early " + sec + " seconds left");
     questionsPage.style.display = "none";
     completedQuiz.style.display = "block";
-    enterBtn.style.display = "none"
-
+    
     getFinalScore();
+    
 }
 
 // function to start timer
@@ -159,13 +159,13 @@ function getFinalScore() {
 
 var storedScores = localStorage.getItem("scores")
 scores = [];
-
+var initialsAndScore = (initials + "-" + score)
 function highScores() {
     completedQuiz.style.dispay = "none";
     highScoresPage.style.display = "block";
-    var initialsAndScore = (initials + "-" + score)
-   // initialsAndScore.push(storedScores); 
-    localStorage.setItem("scores", JSON.stringify(storedScores))
+
+  // initialsAndScore.push(storedScores); 
+  // localStorage.setItem("scores", JSON.stringify(storedScores))
 }
 var player = localStorage.getItem("user");
 console.log(JSON.parse(player));
@@ -173,17 +173,20 @@ console.log(JSON.parse(player));
 
 highScoresList.append.innerHTML = "player";
 
-// restart quiz
-function restart(){
-    startQuiz();
 
+function restart(){
+    playBtn.addEventListener("click", startQuiz());
+    startTimer();
 }
-playBtn.addEventListener("click", restart());
+
+highScoresList.style.display = "none";
+
+clearBtn.addEventListener("click", reset)
 
 // to reset high scores page
 function reset() {
     document.getElementById(highScoresList).reset();
 }
-clearBtn.addEventListener("click", reset)
+
 
 

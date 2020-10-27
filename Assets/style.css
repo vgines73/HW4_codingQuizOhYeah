@@ -12,12 +12,10 @@ body {
     background-image: url(../Images/image1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-   /* background-color: black; */
 }
 
 .container {
     margin: 0 auto;
-
 }
 .setting {
     background-color: black;
