@@ -81,7 +81,7 @@ function startQuiz() {
 
     askQuestion();
     startTimer();
-    
+
 }
 //function to ask the questions
 function askQuestion() {
@@ -114,7 +114,7 @@ function gameOver() {
     gameOn = false;
     console.log("game over");
     if (sec <= -1) {
-    clearInterval(time);
+        clearInterval(time);
     }
     alert("YEAH BUDDY! You survived and finished early " + sec + " seconds left");
     questionsPage.style.display = "none";
@@ -127,14 +127,14 @@ function gameOver() {
 // function to start timer
 function startTimer() {
 
-  document.getElementById("seconds").innerHTML = sec + "seconds left";
-  sec--;
-  if (sec <= -1) {
-    clearInterval(time);
-    questionsPage.style.display = "none";
-    completedQuiz.style.display = "block";
-    enterBtn.style.display = "none"
-  }
+    document.getElementById("seconds").innerHTML = sec + "seconds left";
+    sec--;
+    if (sec <= -1) {
+        clearInterval(time);
+        questionsPage.style.display = "none";
+        completedQuiz.style.display = "block";
+        enterBtn.style.display = "none"
+    }
 }
 var inputForm = document.querySelector("inputForm");
 var initials = document.querySelector("#initials");
@@ -145,23 +145,23 @@ var userNameAndScore = {
     userName: initials.value,
     userScore: score.value
 }
-function getFinalScore() {    
+function getFinalScore() {
     console.log("final score");
     clearInterval(time);
     score.textContent = userScore;
     console.log(userScore);
     completedQuiz.style.display = "block";
-    initials = function(e) {
-        e.preventDefault();
-    }
+    sumbitBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+    })
 }
 
 // to load high score list and store high scores using local storage
 
-    function highScores(){
-        completedQuiz.style.dispay = "none";
-        highScoresPage.style.display = "block";
-   
+function highScores() {
+    completedQuiz.style.dispay = "none";
+    highScoresPage.style.display = "block";
+
     localStorage.setItem("user", JSON.stringify(userNameAndScore))
 }
 var player = localStorage.getItem("user");
@@ -181,7 +181,7 @@ clearBtn.addEventListener("click", reset)
 // to reset high scores page
 function reset() {
     document.getElementById(highScoresList).reset();
-}   
+}
 
 
 
