@@ -141,10 +141,7 @@ var initials = document.querySelector("#initials");
 
 //function for final user score and submit initials and score
 
-var userNameAndScore = {
-    userName: initials.value,
-    userScore: score.value
-}
+
 function getFinalScore() {
     console.log("final score");
     clearInterval(time);
@@ -161,17 +158,21 @@ function getFinalScore() {
 
 // to load high score list and store high scores using local storage
 
+var storedScores = localStorage.getItem("scores")
+scores = [];
+
 function highScores() {
     completedQuiz.style.dispay = "none";
     highScoresPage.style.display = "block";
-
-    localStorage.setItem("user", JSON.stringify(userNameAndScore))
+    var initialsAndScore = (initials + "-" + score)
+    //initialsAndScore.push(storedScores);
+    localStorage.setItem("scores", JSON.stringify(storedScores))
 }
 var player = localStorage.getItem("user");
 console.log(JSON.parse(player));
 
 
-highScoresList.appendChild.innerHTML = "player";
+highScoresList.append.innerHTML = "player";
 
 
 
