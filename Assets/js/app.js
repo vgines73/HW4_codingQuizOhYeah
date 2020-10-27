@@ -15,21 +15,21 @@ var time;
 var gameOn;
 
 //enter button to click to get to rules
-enterBtn.style.display = "block";
+enterBtn.style.display = "block"; // shows enter button
 
 // function to get to rules
 enterBtn.addEventListener("click", showRules);
 function showRules() {
-    enterBtn.style.display = "none";
-    rulesPage.style.display = "block";
+    enterBtn.style.display = "none"; // hides enter button
+    rulesPage.style.display = "block"; // shows rules page
 }
 
 // Button to start and generate the questions page
 yeahBuddyBtn.addEventListener("click", startQuiz);
 
-var questionsPointer = 0;
-var userScore = 0;
-var sec = 60;
+var questionsPointer = 0; // start at question 0
+var userScore = 0; // user score starts at 0
+var sec = 60; // timer starts at 0
 
 var title = document.querySelector("#title");
 var optionA = document.querySelector("#optionA");
@@ -37,7 +37,7 @@ var optionB = document.querySelector("#optionB");
 var optionC = document.querySelector("#optionC");
 var optionD = document.querySelector("#optionD");
 
-// events
+// events user clicking on each answer
 optionA.addEventListener("click", function (e) {
     checkAnswer(e);
 });
@@ -62,12 +62,12 @@ function checkAnswer(e) {
         myQuestions[questionsPointer].answer
     ) {
         console.log("CORRECT!");
-        userScore += 10;
+        userScore += 10; //if answer is correct user gets 10pts
         isGameOver();
     } else {
         console.log("INCORRECT!");
         isGameOver();
-        sec -= 5;
+        sec -= 5; // if incorrect, timer reduced by 5 seconds
     }
 }
 
@@ -141,14 +141,13 @@ var initials = document.querySelector("#initials");
 
 //function for final user score and submit initials and score
 
-
 function getFinalScore() {
     console.log("final score");
     clearInterval(time);
     score.textContent = userScore;
     console.log(userScore);
     completedQuiz.style.display = "block";
-    sumbitBtn.addEventListener("click", function (event) {
+    sumbitBtn.addEventListener("click", function (event) { // prevents game from refreshing
         event.preventDefault();
         highScores();
         completedQuiz.style.display = "none"
@@ -165,7 +164,7 @@ function highScores() {
     completedQuiz.style.dispay = "none";
     highScoresPage.style.display = "block";
     var initialsAndScore = (initials + "-" + score)
-    //initialsAndScore.push(storedScores);
+   // initialsAndScore.push(storedScores); 
     localStorage.setItem("scores", JSON.stringify(storedScores))
 }
 var player = localStorage.getItem("user");
@@ -174,18 +173,17 @@ console.log(JSON.parse(player));
 
 highScoresList.append.innerHTML = "player";
 
+// restart quiz
+function restart(){
+    startQuiz();
 
-
-
-
-
-playBtn.addEventListener("click", askQuestion);
-clearBtn.addEventListener("click", reset)
+}
+playBtn.addEventListener("click", restart());
 
 // to reset high scores page
 function reset() {
     document.getElementById(highScoresList).reset();
 }
-
+clearBtn.addEventListener("click", reset)
 
 

@@ -25,7 +25,7 @@ var myQuestions = [
         answer: "A"
     },
     { 
-        q: "What are we doing here? document.body.children[1]);",
+        q: "document.body.children[1]",
         choices: ["Traversing the BOM.", "Traversing inside CSS", "Traversing the DOM.", "Traversing inside Javascript."],
         answer: "C"
     },    
@@ -40,12 +40,12 @@ var myQuestions = [
         answer: "B"
     },    
     {
-        q: "What does console.log() mean in Javascript?",
+        q: "What does console.log() do?",
         choices: ["It's a function used to print any kind of variables defined or messages displayed to the user.", "It's a gaming system.", "It's to comfort sad logs.", "It's a function you use to save data."],
         answer: "A"
     },    
     {
-        q: "What are the 3 building blocks of the Web?",
+        q: "The 3 building blocks of the Web?",
         choices: ["HTML, CSS, Javascript", "Variables, Functions, For Loops", "Strings, Arrays, Booleans", "querySelector, getAttribute, setAttribute"],
         answer: "A"
     },    
