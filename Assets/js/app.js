@@ -143,29 +143,38 @@ var initials = document.querySelector("#initials");
 
 var userNameAndScore = {
     userName: initials.value,
-    userScored: score.value
+    userScore: score.value
 }
 function getFinalScore() {    
     console.log("final score");
     clearInterval(time);
     score.textContent = userScore;
     console.log(userScore);
-    sumbitBtn.addEventListener("click", highScores);
     completedQuiz.style.display = "block";
-    enterBtn.style.display = "none";
+    initials = function(e) {
+        e.preventDefault();
+    }
 }
 
-// to store high scores using local storage
-function highScores (){
-    submitBtn.addEventListener("click", function(event){
-        event.preventDefault;
-    })
-    
-    localStorage.setItem("userNameAndScores", JSON.stringify(userNameAndScore))
+// to load high score list and store high scores using local storage
+
+    function highScores(){
+        completedQuiz.style.dispay = "none";
+        highScoresPage.style.display = "block";
+   
+    localStorage.setItem("user", JSON.stringify(userNameAndScore))
 }
-var lastUser = window.localStorage.getItem("userNameAndScores");
-console.log(JSON.parse(lastUser));
-highScoresList.innerHTML = "";
+var player = localStorage.getItem("user");
+console.log(JSON.parse(player));
+
+
+highScoresList.appendChild.innerHTML = "player";
+
+
+
+
+
+
 playBtn.addEventListener("click", askQuestion);
 clearBtn.addEventListener("click", reset)
 
