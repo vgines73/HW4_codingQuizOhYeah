@@ -21,8 +21,8 @@ https://vgines73.github.io/HW4_codingQuizOhYeah/
 
 https://github.com/vgines73/HW4_codingQuizOhYeah
 
-This assignment was really hard. I felt like I spent over 20 hours trying to finish this. I came coming across a ton of issues/errors.
-I ended up getting stuck after completing the quiz. The submit button wouldn't console.log so I knew I wouldn't be able to put it in local storage. Which I was not able to create an updated high score page.
+This assignment was really hard. I felt like I spent over 20 hours trying to problem solve and finish this. I came coming across a ton of issues/errors.
+I ended up getting stuck after completing the quiz. The submit button wouldn't console.log so I knew I wouldn't be able to put it in local storage. Which I was not able to create an updated high score page. 
 
 Another issue I had was after completing the quiz, the game would refresh after the submit button.
-So I was not able to finish this assignment. 
+So I was not able to finish this assignment. After finally figuring out how to use the event.preventdefault function, I was able to prevent the game from refreshing. 
