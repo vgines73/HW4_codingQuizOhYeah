@@ -103,16 +103,16 @@ function isGameOver() {
         //console.log("GAME OVER");
         gameOver();
     } else {
-        console.log("no game is not over");
+        //console.log("no game is not over");
         questionsPointer++;
-        console.log(`questionsPointer is ${questionsPointer}`);
+        //console.log(`questionsPointer is ${questionsPointer}`);
         askQuestion();
     }
 }
 // when the game is over
 function gameOver() {
     gameOn = false;
-    console.log("game over");
+    //console.log("game over");
     if (sec <= -1) {
         clearInterval(time);
     }
@@ -142,16 +142,16 @@ var initials = document.querySelector("#initials");
 //function for final user score and submit initials and score
 
 function getFinalScore() {
-    console.log("final score");
+    //console.log("final score");
     clearInterval(time);
     initials.textContent = 
     score.textContent = userScore;
-    console.log(userScore);
+    //console.log(userScore);
     completedQuiz.style.display = "block";
     sumbitBtn.addEventListener("click", function (event) { // prevents game from refreshing
         event.preventDefault();
         highScores();
-        // completedQuiz.style.display = "none"
+        completedQuiz.style.display = "none"
         // highScoresList.style.display = "block";
     })
     
@@ -171,39 +171,34 @@ var initialsAndScore = {
     name: initials,
     score: userScore
 }
-
+// store high scores/initals in local storage
 function highScores() {
     completedQuiz.style.dispay = "none";
     highScoresPage.style.display = "block";
     saveHighScore();
-    //initialsAndScore.push(storedScores); 
+    initialsAndScore.storedScores  
     localStorage.setItem("player", JSON.stringify(initialsAndScore))
 }
 var player = localStorage.getItem("scores");
-console.log(JSON.parse(player));
+//console.log(JSON.parse(player));
 
 
-highScoresList.append.innerHTML = "player";
+highScoresList.appendChild.innerHTML = "player";
 
 
 function saveHighScore() {
     if (questionsPointer === myQuestions.length - 1) {
         console.log(storedScores)
+        
     }
 }
 
-function restart(){
-    playBtn.addEventListener("click", function() {
-        startQuiz();
-    })
-};
-
-
-
+// reset high scores
 clearBtn.addEventListener("click", function(){
     localStorage.clear();
 })
 
+// to view high scores list
 
 
 
