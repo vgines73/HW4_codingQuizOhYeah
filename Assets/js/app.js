@@ -144,49 +144,66 @@ var initials = document.querySelector("#initials");
 function getFinalScore() {
     console.log("final score");
     clearInterval(time);
+    initials.textContent = 
     score.textContent = userScore;
     console.log(userScore);
     completedQuiz.style.display = "block";
     sumbitBtn.addEventListener("click", function (event) { // prevents game from refreshing
         event.preventDefault();
         highScores();
-        completedQuiz.style.display = "none"
+        // completedQuiz.style.display = "none"
+        // highScoresList.style.display = "block";
     })
     
 }
 
 // to load high score list and store high scores using local storage
 
+// var item = {name: "Thomas"}
+// window.localStorage.setItem(JSON.stringify(item))
+// var getThing = window.localStorage.getItem(JSON.parse(item))
+// console.log(getThing)
+
+
 var storedScores = localStorage.getItem("scores")
 scores = [];
-var initialsAndScore = (initials + "-" + score)
+var initialsAndScore = {
+    name: initials.value, 
+    score: userScore.value
+}
+
 function highScores() {
     completedQuiz.style.dispay = "none";
     highScoresPage.style.display = "block";
-
-  // initialsAndScore.push(storedScores); 
-  // localStorage.setItem("scores", JSON.stringify(storedScores))
+    saveHighScore();
+    //initialsAndScore.push(storedScores); 
+    localStorage.setItem("initials", JSON.stringify(initialsAndScore))
 }
-var player = localStorage.getItem("user");
+var player = localStorage.getItem("scores");
 console.log(JSON.parse(player));
 
 
 highScoresList.append.innerHTML = "player";
 
 
+function saveHighScore() {
+    if (questionsPointer === myQuestions.length - 1) {
+        console.log(storedScores)
+    }
+}
+
 function restart(){
-    playBtn.addEventListener("click", startQuiz());
-    startTimer();
-}
+    playBtn.addEventListener("click", function() {
+        startQuiz();
+    })
+};
 
-highScoresList.style.display = "none";
 
-clearBtn.addEventListener("click", reset)
 
-// to reset high scores page
-function reset() {
-    document.getElementById(highScoresList).reset();
-}
+clearBtn.addEventListener("click", function(){
+    localStorage.clear();
+})
+
 
 
 
