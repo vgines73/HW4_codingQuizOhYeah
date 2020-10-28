@@ -156,9 +156,7 @@ function getFinalScore() {
     })
     
 }
-
-// to load high score list and store high scores using local storage
-
+// example from class
 // var item = {name: "Thomas"}
 // window.localStorage.setItem(JSON.stringify(item))
 // var getThing = window.localStorage.getItem(JSON.parse(item))
@@ -199,6 +197,9 @@ clearBtn.addEventListener("click", function(){
 })
 
 // to view high scores list
-
+var viewHighScores = document.querySelector("#view-high-scores")
+viewHighScores.addEventListener(click, function(){
+    highScoresPage.style.display = "none"
+})
 
 

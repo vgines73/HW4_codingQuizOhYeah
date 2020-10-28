@@ -25,4 +25,8 @@ This assignment was really hard. I felt like I spent over 20 hours trying to pro
 I ended up getting stuck after completing the quiz. The submit button wouldn't console.log so I knew I wouldn't be able to put it in local storage. Which I was not able to create an updated high score page. 
 
 Another issue I had was after completing the quiz, the game would refresh after the submit button.
-So I was not able to finish this assignment. After finally figuring out how to use the event.preventdefault function, I was able to prevent the game from refreshing. 
+So I was not able to finish this assignment. After finally figuring out how to use the event.preventdefault function, I was able to prevent the game from refreshing.
+
+Local storage was a big issue. I couldn't store anything in local storage. After numerous attempts, research, I was able to at least get the object in there. I was not able to get the values in. Everytime i ran it, it would come out with name with no initials, and score would be 0.
+
+I was able to fix the play again button and im assuming the clear high score button is functional because the clear button cleared out local storage.
