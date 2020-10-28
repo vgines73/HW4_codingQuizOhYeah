@@ -168,8 +168,8 @@ function getFinalScore() {
 var storedScores = localStorage.getItem("scores")
 scores = [];
 var initialsAndScore = {
-    name: initials.value, 
-    score: userScore.value
+    name: initials,
+    score: userScore
 }
 
 function highScores() {
@@ -177,7 +177,7 @@ function highScores() {
     highScoresPage.style.display = "block";
     saveHighScore();
     //initialsAndScore.push(storedScores); 
-    localStorage.setItem("initials", JSON.stringify(initialsAndScore))
+    localStorage.setItem("player", JSON.stringify(initialsAndScore))
 }
 var player = localStorage.getItem("scores");
 console.log(JSON.parse(player));
