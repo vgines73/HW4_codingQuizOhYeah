@@ -191,10 +191,10 @@ function highScores() {
 
 // to show high scores
 if (playerScore !== null) {
-    for(var i =0; i < playerScore.length; i++){
+    for(var i =0; i < Object.keys(playerScore).length; i++){
 
         var playerRank = document.querySelector("#player-rank")
-        var createLi = document.getElementById("li");
+        var createLi = document.createElement("li");
         createLi.textContent = playerScore.initials + "OOH YEAH" + playerScore.userScore;
         playerRank.appendChild(createLi);
     };
