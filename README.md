@@ -30,3 +30,5 @@ So I was not able to finish this assignment. After finally figuring out how to u
 Local storage was a big issue. I couldn't store anything in local storage. After numerous attempts, research, I was able to at least get the object in there. I was not able to get the values in. Everytime i ran it, it would come out with name with no initials, and score would be 0.
 
 I was able to fix the play again button and im assuming the clear high score button is functional because the clear button cleared out local storage.
+
+Local storage is now fixed. For my variables, my playerInitials is set equal to an empty value, and my initialsAndScore is also pre-defined as name:null, score:0. I needed to assign values to them inside the high score function. When I was trying to figure out why my values weren't coming up I was using textContent as opposed to grabbing its value by using .value.

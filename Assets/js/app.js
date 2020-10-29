@@ -185,17 +185,20 @@ function highScores() {
     console.log(player);
     console.log(playerInitials)
     localStorage.setItem("player", player)
-}
+};
  var playerScore = JSON.parse(localStorage.getItem("player"));
 //console.log(JSON.parse(player));
 
 // to show high scores
+if (playerScore !== null) {
+    for(var i =0; i < playerScore.length; i++){
 
-var playerRank = document.querySelector("#player-rank")
-var playerList = document.getElementById("li");
-playerList.textContent = playerScore;
-playerRank.appendChild(playerList);
-
+        var playerRank = document.querySelector("#player-rank")
+        var playerList = document.getElementById("li");
+        playerList.textContent = playerScore.initials + "OOH YEAH" + playerScore.userScore;
+        playerRank.appendChild(playerList);
+    }
+}
 
 function saveHighScore() {
     if (questionsPointer === myQuestions.length - 1) {
