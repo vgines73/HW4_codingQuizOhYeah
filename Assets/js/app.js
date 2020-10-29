@@ -163,30 +163,34 @@ function getFinalScore() {
 // console.log(getThing)
 
 
-var storedScores = localStorage.getItem("scores")
+var playerInitials = initials.textContent
 scores = [];
 var initialsAndScore = {
-    name: initials,
+    name: playerInitials,  // Key is player; Value comes up {"name":{}","score":0}
     score: userScore
 }
-// store high scores/initals in local storage
+
+// store high scores/initials in local storage
 function highScores() {
     completedQuiz.style.dispay = "none";
     highScoresPage.style.display = "block";
     saveHighScore();
     initialsAndScore.storedScores  
-    localStorage.setItem("player", JSON.stringify(initialsAndScore))
+    var player = JSON.stringify(initialsAndScore)
+    console.log(player);
+    console.log(playerInitials)
 }
-var player = localStorage.getItem("scores");
+
+ var playerScore = JSON.parse(localStorage.getItem("player"));
 //console.log(JSON.parse(player));
 
 
-highScoresList.appendChild.innerHTML = "player";
+highScoresList.appendChild.innerHTML = playerScore;
 
 
 function saveHighScore() {
     if (questionsPointer === myQuestions.length - 1) {
-        console.log(storedScores)
+      console.log(playerScore)
         
     }
 }
@@ -197,9 +201,9 @@ clearBtn.addEventListener("click", function(){
 })
 
 // to view high scores list
-var viewHighScores = document.querySelector("#view-high-scores")
-viewHighScores.addEventListener(click, function(){
-    highScoresPage.style.display = "none"
-})
+// var viewHighScores = document.getElementById("#view-high-scores")
+// viewHighScores.addEventListener(click, function(){
+//     highScoresPage.style.display = "none"
+// })
 
 
