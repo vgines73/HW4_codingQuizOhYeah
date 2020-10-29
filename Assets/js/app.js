@@ -194,11 +194,11 @@ if (playerScore !== null) {
     for(var i =0; i < playerScore.length; i++){
 
         var playerRank = document.querySelector("#player-rank")
-        var playerList = document.getElementById("li");
-        playerList.textContent = playerScore.initials + "OOH YEAH" + playerScore.userScore;
-        playerRank.appendChild(playerList);
-    }
-}
+        var createLi = document.getElementById("li");
+        createLi.textContent = playerScore.initials + "OOH YEAH" + playerScore.userScore;
+        playerRank.appendChild(createLi);
+    };
+};
 
 function saveHighScore() {
     if (questionsPointer === myQuestions.length - 1) {
