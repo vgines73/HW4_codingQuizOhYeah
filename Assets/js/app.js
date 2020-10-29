@@ -144,7 +144,7 @@ var initials = document.querySelector("#initials");
 function getFinalScore() {
     //console.log("final score");
     clearInterval(time);
-    initials.textContent = 
+  //  initials.textContent = 
     score.textContent = userScore;
     //console.log(userScore);
     completedQuiz.style.display = "block";
@@ -163,34 +163,43 @@ function getFinalScore() {
 // console.log(getThing)
 
 
-var playerInitials = initials.textContent
+
+
+
+var playerInitials 
 scores = [];
-var initialsAndScore = {
-    name: playerInitials,  // Key is player; Value comes up {"name":{}","score":0}
-    score: userScore
-}
+var initialsAndScore
 
 // store high scores/initials in local storage
 function highScores() {
     completedQuiz.style.dispay = "none";
     highScoresPage.style.display = "block";
+    playerInitials = initials.value
+    initialsAndScore = {
+      name: playerInitials,
+      score: userScore
+    }
     saveHighScore();
     initialsAndScore.storedScores  
     var player = JSON.stringify(initialsAndScore)
     console.log(player);
     console.log(playerInitials)
+    localStorage.setItem("player", player)
 }
-
  var playerScore = JSON.parse(localStorage.getItem("player"));
 //console.log(JSON.parse(player));
 
+// to show high scores
 
-highScoresList.appendChild.innerHTML = playerScore;
+var playerRank = document.querySelector("#player-rank")
+var playerList = document.getElementById("li");
+playerList.textContent = playerScore;
+playerRank.appendChild(playerList);
 
 
 function saveHighScore() {
     if (questionsPointer === myQuestions.length - 1) {
-      console.log(playerScore)
+    console.log(playerScore)
         
     }
 }
@@ -201,6 +210,8 @@ clearBtn.addEventListener("click", function(){
 })
 
 // to view high scores list
+
+
 // var viewHighScores = document.getElementById("#view-high-scores")
 // viewHighScores.addEventListener(click, function(){
 //     highScoresPage.style.display = "none"
