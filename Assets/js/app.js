@@ -144,7 +144,6 @@ var initials = document.querySelector("#initials");
 function getFinalScore() {
     //console.log("final score");
     clearInterval(time);
-  //  initials.textContent = 
     score.textContent = userScore;
     //console.log(userScore);
     completedQuiz.style.display = "block";
@@ -162,10 +161,6 @@ function getFinalScore() {
 // var getThing = window.localStorage.getItem(JSON.parse(item))
 // console.log(getThing)
 
-
-
-
-
 var playerInitials 
 scores = [];
 var initialsAndScore
@@ -175,18 +170,17 @@ function highScores() {
     completedQuiz.style.dispay = "none";
     highScoresPage.style.display = "block";
     playerInitials = initials.value
-    initialsAndScore = {
-      name: playerInitials,
-      score: userScore
-    }
-    saveHighScore();
-    initialsAndScore.storedScores  
+    initialsAndScore = [
+        {playerInitials, userScore},
+       // {"score": userScore}
+    ]
+    saveHighScore(); 
     var player = JSON.stringify(initialsAndScore)
     console.log(player);
     console.log(playerInitials)
-    localStorage.setItem("player", player)
+    window.localStorage.setItem(playerInitials, userScore)
 };
- var playerScore = JSON.parse(localStorage.getItem("player"));
+ var playerScore = JSON.parse(localStorage.getItem(player));
 //console.log(JSON.parse(player));
 
 // to show high scores
@@ -195,7 +189,7 @@ if (playerScore !== null) {
 
         var playerRank = document.querySelector("#player-rank")
         var createLi = document.createElement("li");
-        createLi.textContent = playerScore.initials + "OOH YEAH" + playerScore.userScore;
+        createLi.textContent = [{playerScore}].initials + "OOH YEAH" + [{playerScore}].userScore;
         playerRank.appendChild(createLi);
     };
 };
@@ -208,16 +202,10 @@ function saveHighScore() {
 }
 
 // reset high scores
-clearBtn.addEventListener("click", function(){
-    localStorage.clear();
+clearBtn.addEventListener("click", function(e){
+    e.preventDefault();
+    playerRank.clear();
+    
 })
-
-// to view high scores list
-
-
-// var viewHighScores = document.getElementById("#view-high-scores")
-// viewHighScores.addEventListener(click, function(){
-//     highScoresPage.style.display = "none"
-// })
 
 

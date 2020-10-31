@@ -32,3 +32,5 @@ Local storage was a big issue. I couldn't store anything in local storage. After
 I was able to fix the play again button and im assuming the clear high score button is functional because the clear button cleared out local storage.
 
 Local storage is now fixed. For my variables, my playerInitials is set equal to an empty value, and my initialsAndScore is also pre-defined as name:null, score:0. I needed to assign values to them inside the high score function. When I was trying to figure out why my values weren't coming up I was using textContent as opposed to grabbing its value by using .value.
+
+Next issue was obtaining the scores on the high scores page. When returned user initials and userscore came back undefined. I also noticed another error where multiple users are not saved into local storage. Instead it was replaced.
