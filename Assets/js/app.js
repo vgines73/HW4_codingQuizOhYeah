@@ -72,17 +72,14 @@ function checkAnswer(e) {
 }
 
 // function to start the quiz, askquestions, and timer
-time = setInterval(startTimer, 1000);
-
 function startQuiz() {
     gameOn = true;
     rulesPage.style.display = "none";
     questionsPage.style.display = "block";
 
     askQuestion();
-    //startTimer();
-
 }
+
 //function to ask the questions
 function askQuestion() {
     if (gameOn) {
@@ -125,17 +122,19 @@ function gameOver() {
 }
 
 // function to start timer
-function startTimer() {
-
+var startTimer;
+var time = setInterval(startTimer, 1000);
+yeahBuddyBtn.addEventListener("click", function StartTimer() { // timer shows but doesn't countdown
+    
     document.getElementById("seconds").innerHTML = sec + "seconds left";
-    sec--;
+    sec--
     if (sec <= -1) {
         clearInterval(time);
         questionsPage.style.display = "none";
         completedQuiz.style.display = "block";
         enterBtn.style.display = "none"
     }
-}
+});
 var inputForm = document.querySelector("inputForm");
 var initials = document.querySelector("#initials");
 
@@ -150,20 +149,15 @@ function getFinalScore() {
     sumbitBtn.addEventListener("click", function (event) { // prevents game from refreshing
         event.preventDefault();
         highScores();
-        completedQuiz.style.display = "none"
+        completedQuiz.style.display = "none";
         // highScoresList.style.display = "block";
     })
     
 }
-// example from class
-// var item = {name: "Thomas"}
-// window.localStorage.setItem(JSON.stringify(item))
-// var getThing = window.localStorage.getItem(JSON.parse(item))
-// console.log(getThing)
 
-var playerInitials 
+var playerInitials; 
 scores = [];
-var initialsAndScore
+var initialsAndScore;
 
 // store high scores/initials in local storage
 function highScores() {
@@ -172,40 +166,43 @@ function highScores() {
     playerInitials = initials.value
     initialsAndScore = [
         {playerInitials, userScore},
-       // {"score": userScore}
-    ]
+    ];
     saveHighScore(); 
-    var player = JSON.stringify(initialsAndScore)
+    player = JSON.stringify(initialsAndScore);
     console.log(player);
-    console.log(playerInitials)
-    window.localStorage.setItem(playerInitials, userScore)
+    console.log(playerInitials);
+    window.localStorage.setItem(playerInitials, userScore);
+
 };
- var playerScore = JSON.parse(localStorage.getItem(player));
-//console.log(JSON.parse(player));
+ var playerScore = JSON.parse(localStorage.getItem(initialsAndScore));
+//console.log(playerScore);
 
 // to show high scores
 if (playerScore !== null) {
-    for(var i =0; i < Object.keys(playerScore).length; i++){
+    for(var i =0; i < playerScore.length; i++){
 
-        var playerRank = document.querySelector("#player-rank")
-        var createLi = document.createElement("li");
-        createLi.textContent = [{playerScore}].initials + "OOH YEAH" + [{playerScore}].userScore;
-        playerRank.appendChild(createLi);
+        playerRank = document.querySelector("#player-rank");
+        createLi = document.createElement("li");
+        user = e.target.querySelector("li").getAttribute("player-rank");
+        totalScore = e.target.querySelector("li").value;
+        window.localStorage.setItem(user, totalScore);
+        playerRank.push(user, totalScore);
+        playerRank.append(createLi);
     };
 };
 
 function saveHighScore() {
     if (questionsPointer === myQuestions.length - 1) {
-    console.log(playerScore)
-        
-    }
-}
+    console.log(playerScore);
+    };
+};
 
 // reset high scores
-clearBtn.addEventListener("click", function(e){
-    e.preventDefault();
-    playerRank.clear();
+clearBtn.addEventListener("click", function clear(){
+    if (inputForm === null) {
+        alert("Scores are already cleared Buddy!")
+    };
     
-})
+});
 
 
